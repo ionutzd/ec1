@@ -10,14 +10,14 @@ Variabila b= <input type="number" name="b">
 <br>
 Variabila c= <input type="number" name="c">
 <br>
-<input type="submit" value="trimite">
+<input type="submit" name="btnSubmit" value="trimite">
 </form>
  
 <?php
 $a1=$_POST[a];
 $b1=$_POST[b];
 $c1=$_POST[c];
-if (isset($_POST["submit"])){
+if (isset($_POST["btnSubmit"])){
 	$x=($c1-$b1)/$a1;
 	echo "Necunoscuta x in ecuatia $a1 *x +$b1 = $c1 este $x";
 }
