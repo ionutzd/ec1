@@ -2,15 +2,6 @@
 <html>
 <body>
  
-<?php
-$a1=$_POST[a];
-$b1=$_POST[b];
-$c1=$_POST[c];
-if ((isset($_POST[a])) && (isset($_POST[b])) && (isset($_POST[c])) ) {
-	$x=($c1-$b1)/$a1;
-}
-?>
- 
 <h2> Introduceti termenii ecuatiei de gradul 1, forma ax+b=c </h2>
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 Variabila a= <input type="number" name="a">
@@ -23,7 +14,13 @@ Variabila c= <input type="number" name="c">
 </form>
  
 <?php
-echo "Necunoscuta x in ecuatia $a1 *x +$b1 = $c1 este $x";
+$a1=$_POST[a];
+$b1=$_POST[b];
+$c1=$_POST[c];
+if (isset($_POST["submit"])){
+	$x=($c1-$b1)/$a1;
+	echo "Necunoscuta x in ecuatia $a1 *x +$b1 = $c1 este $x";
+}
 ?>
  
 </body>
